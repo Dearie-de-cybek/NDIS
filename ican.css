@@ -1,0 +1,275 @@
+/* --- ICAN PAGE HERO --- */
+.ican-hero {
+    /* Soft gradient: White to Light Blue */
+    background: linear-gradient(to right, #ffffff 40%, #e6f2ff 100%);
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Breadcrumbs (Home > ICAN Program) */
+.breadcrumbs {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Hero Actions Container */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Space between button and phone number */
+    margin-top: 30px;
+}
+
+/* The Gold Button is already defined in your CSS as .btn-gold 
+   If not, ensure you have this: */
+.btn-gold {
+    background-color: #C5A059;
+    color: #fff;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.btn-gold:hover {
+    background-color: #b08d45;
+}
+
+/* Phone Link Styling */
+.phone-link {
+    color: #555;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.phone-link i {
+    color: #C5A059; /* Gold Phone Icon */
+}
+
+.phone-link:hover {
+    color: #003366; /* Changes to blue on hover */
+}
+
+
+
+
+/* --- PURPOSE SECTION --- */
+.purpose-section {
+    padding: 80px 0;
+    background-color: #fff; /* Clean white background */
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Left side is wider */
+    gap: 60px;
+    align-items: center; /* Vertically center them */
+}
+
+/* --- Left Side Styling --- */
+.section-title {
+    color: #003366;
+    font-size: 28px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.icon-gold {
+    color: #C5A059;
+    font-size: 32px;
+}
+
+/* Custom List with Gold Bullets */
+.custom-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 25px; /* Space for the bullet */
+    margin-bottom: 15px;
+    color: #555;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.custom-list li::before {
+    content: "•"; /* Bullet point */
+    color: #C5A059; /* Gold color */
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+/* The "Definition" Box */
+.definition-box {
+    background-color: #f0f7ff; /* Very light blue */
+    padding: 25px;
+    border-radius: 12px;
+    border-left: 4px solid #003366; /* Accent line on the left */
+}
+
+.definition-box p {
+    color: #003366;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Right Side: Suitability Card --- */
+.suitability-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08); /* Soft floating shadow */
+    text-align: center;
+    border-top: 5px solid #dbeaff; /* Subtle light blue top border */
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background-color: #fff8e1; /* Light Gold background */
+    color: #C5A059;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin: 0 auto 20px auto;
+}
+
+.suitability-card h3 {
+    color: #003366;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.suitability-card p {
+    color: #666;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .purpose-grid {
+        grid-template-columns: 1fr; /* Stack on top of each other */
+        gap: 40px;
+    }
+    
+    .suitability-card {
+        padding: 30px 20px;
+    }
+}
+
+/* --- ELIGIBILITY SECTION --- */
+.eligibility-section {
+    padding: 80px 0;
+    background-color: #f9fcff; /* Very faint blue tint to separate from white section above */
+}
+
+.eligibility-header {
+    text-align: left; /* Aligned left as per image */
+    margin-bottom: 50px;
+    max-width: 800px;
+}
+
+.eligibility-header h2 {
+    color: #003366;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.eligibility-header p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* --- The Grid Layout --- */
+.eligibility-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 Equal Columns */
+    gap: 25px;
+}
+
+/* Individual Card Styling */
+.eligibility-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    border: 1px solid #eee; /* Subtle border */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.eligibility-card:hover {
+    transform: translateY(-5px); /* Moves up on hover */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Icon Circle Styling */
+.card-icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #fff8e1; /* Light Gold background */
+    color: #003366; /* Dark Blue Icon */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 24px;
+}
+
+.eligibility-card h3 {
+    color: #003366;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.eligibility-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    min-height: 60px; /* Ensures cards stay same height even with short text */
+}
+
+.eligibility-card a {
+    color: #003366;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.eligibility-card a:hover {
+    text-decoration: underline;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .eligibility-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .eligibility-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
