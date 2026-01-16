@@ -1,0 +1,192 @@
+/* --- GLOBAL RESET & FONTS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* Helper class to keep content centered with max-width */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- PART 1: TOP BAR STYLES --- */
+.top-bar {
+    background-color: #003366; /* Dark Blue */
+    color: #fff;
+    font-size: 13px;
+    padding: 10px 0;
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between; /* Pushes contact to left, links to right */
+    align-items: center;
+}
+
+.contact-info span, 
+.top-links span, 
+.top-links a {
+    margin-right: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* --- PART 2: MAIN NAV STYLES --- */
+.main-nav {
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow under nav */
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo img {
+    height: 50px; /* Adjust this based on your logo size */
+    width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Space between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #003366; /* Blue active color */
+    border-bottom: 2px solid #003366; /* The little underline in the design */
+    padding-bottom: 5px;
+}
+
+/* Enquire Button */
+.btn-enquire {
+    background-color: #003366; /* Blue background */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px; /* Makes it pill-shaped */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.btn-enquire:hover {
+    background-color: #002244; /* Darker blue on hover */
+}
+
+
+/* --- HERO SECTION --- */
+.hero-section {
+    /* This creates the blend: Soft Blue on left (0%) to White on right (100%) */
+    background: linear-gradient(to right, #f0f8ff 40%, #ffffff 100%);
+    padding: 80px 0; /* Space above and below the content */
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center; /* Aligns text and image vertically in the middle */
+    justify-content: space-between;
+    gap: 50px; /* Space between text and image */
+}
+
+/* --- Left Side: Text Styling --- */
+.hero-text {
+    flex: 1; /* Takes up 50% of the space */
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    color: #003366; /* Dark Blue from header */
+    font-size: 42px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px; /* Space between the two buttons */
+}
+
+/* Secondary Button (Welcome Pack) */
+.btn-secondary {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #003366; /* Blue border */
+    color: #003366;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+/* --- Right Side: Image Styling --- */
+.hero-image-wrapper {
+    flex: 1; /* Takes up the other 50% */
+    display: flex;
+    justify-content: flex-end; /* Pushes image to the right */
+}
+
+.hero-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    /* This creates the "Organic/Blob" shape seen in your picture */
+    /* Top-Left, Top-Right, Bottom-Right, Bottom-Left */
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    
+    /* Adds a soft shadow to make it pop */
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Responsive: Stack them on mobile screens */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Stack top to bottom */
+        text-align: center;
+    }
+    
+    .hero-image-wrapper {
+        margin-top: 40px;
+        justify-content: center;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+}
