@@ -349,107 +349,301 @@ body {
 
 /* --- WHY CHOOSE US SECTION --- */
 .why-choose-us-section {
-    padding: 60px 0 80px 0;
-    background-color: #fff; /* White background */
+    position: relative;
+    padding: 60px 0 100px 0;
+    background-color: #fff;
     text-align: center;
+    /* Removed overflow hidden so we can control wave better if needed, 
+       but keeping it usually prevents horizontal scroll issues */
+    overflow: hidden; 
 }
 
-/* Fancy Gold Subheader */
+/* The Blue Wave Background */
+.wave-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0; /* Behind the content */
+}
+
+.wave-bg svg {
+    display: block;
+    width: 100%;
+    height: 450px; /* Made taller so it rises behind the cards */
+}
+
+/* Content wrapper */
+.relative-content {
+    position: relative;
+    z-index: 2; /* Sits ON TOP of the wave */
+}
+
 .fancy-subhead {
-    color: #C5A059; /* Gold */
-    font-family: "Georgia", serif; /* Serif font for elegance */
+    color: #C5A059;
+    font-family: "Georgia", serif;
     font-style: italic;
     font-size: 18px;
-    font-weight: 400;
     margin-bottom: 10px;
 }
 
-/* --- THE GRID (5 Columns) --- */
-.choose-us-grid {
-    display: grid;
-    /* 4 columns for benefits (1 part each) + 1 column for ICAN (1.2 parts) */
-    grid-template-columns: repeat(4, 1fr) 1.2fr;
-    gap: 15px;
+/* --- MAIN LAYOUT (Flexbox) --- */
+.choose-us-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* CRITICAL: Makes both sides equal height */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* --- LEFT: The 4 Benefits Group --- */
+.benefits-group {
+    flex: 2; 
+    display: flex;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+}
+
+.benefit-item {
+    flex: 1;
+    padding: 30px 15px;
+    border-right: 1px solid #eee;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Spreads content evenly */
+}
+
+.benefit-item:last-child {
+    border-right: none;
+}
+
+.benefit-item h3 {
+    font-size: 15px;
+    color: #003366;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+.benefit-item p {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.benefit-item a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #003366;
+    text-decoration: none;
+    margin-top: auto; /* Pushes link to bottom */
+}
+
+/* --- RIGHT: The ICAN Card --- */
+.ican-wide {
+    flex: 1; 
+    background: #fff;
+    border-top: 5px solid #89CFF0;
+    border-radius: 15px;
+    padding: 0 30px; /* Padding on sides, flex handles vertical centering */
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content vertically */
+    align-items: center;
     text-align: center;
 }
 
-/* Benefit Card Styling */
-.benefit-card {
-    background: #fff;
-    padding: 25px 15px;
-    border-radius: 15px;
-    /* Very subtle border/shadow */
-    border: 1px solid #f0f0f0;
-    transition: transform 0.3s ease;
-}
-
-.benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-
-/* Blue Icon Circles */
-.icon-circle-blue {
-    width: 60px;
-    height: 60px;
-    background-color: #e6f2ff; /* Very Light Blue bg */
-    color: #003366; /* Dark Blue icon */
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 20px auto;
+.ican-wide h3 {
     font-size: 22px;
-}
-
-.benefit-card h3 {
-    color: #003366;
-    font-size: 16px; /* Slightly smaller to fit */
-    margin-bottom: 10px;
-    min-height: 40px; /* Forces lines to align even if text varies */
-}
-
-.benefit-card p {
-    color: #666;
-    font-size: 13px;
-    line-height: 1.5;
     margin-bottom: 15px;
-}
-
-.benefit-card a {
-    color: #003366;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 13px;
-}
-
-/* Star Rating in ICAN card (Specific to this section) */
-.rating-stars {
-    margin-top: 15px;
-    color: #ffc107; /* Star yellow */
-    font-size: 12px;
-}
-.rating-stars span {
     color: #333;
-    font-weight: bold;
-    margin-right: 5px;
+}
+
+.ican-wide p {
+    margin-bottom: 25px;
+    color: #666;
+    line-height: 1.6;
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 1200px) {
-    .choose-us-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+@media (max-width: 1024px) {
+    .choose-us-layout {
+        flex-direction: column;
     }
-    .choose-us-grid .featured-card {
-        grid-column: span 2; 
+    
+    .benefits-group {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    
+    .benefit-item {
+        flex: 1 1 45%; 
+        border-bottom: 1px solid #eee;
+    }
+    
+    .benefit-item:nth-child(2) { border-right: none; }
+    .benefit-item:nth-child(4) { border-right: none; border-bottom: none; }
+
+    .ican-wide {
+        width: 100%;
+        padding: 40px 30px; /* Add padding back for mobile since stretch isn't applying same way */
     }
 }
 
-@media (max-width: 768px) {
-    .choose-us-grid {
-        grid-template-columns: 1fr;
+/* --- FOOTER SECTION --- */
+.site-footer {
+    background-color: #003366; /* Deep Blue to match Top Bar */
+    color: #fff;
+    padding-top: 70px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: grid;
+    /* 4 Columns: First one is slightly wider (1.5fr), others are equal (1fr) */
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 40px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* Thin divider line */
+}
+
+/* Footer Headings */
+.footer-col h4 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* --- Column 1: About & Logo --- */
+.footer-logo {
+    max-width: 150px;
+    margin-bottom: 20px;
+    /* In case you don't have a white logo, this filter makes a black logo white */
+    /* filter: brightness(0) invert(1); */ 
+}
+
+.about-col p {
+    color: #dbeaff; /* Very light blueish-white */
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 250px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    background-color: rgba(255,255,255,0.1);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #C5A059; /* Gold hover */
+}
+
+/* --- Links Styling (Middle Columns) --- */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    color: #dbeaff;
+    text-decoration: none;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+/* Hover Effect: Link turns Gold and moves right slightly */
+.footer-col ul li a:hover {
+    color: #C5A059;
+    padding-left: 5px; 
+}
+
+/* --- Contact Column --- */
+.contact-col ul li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: #dbeaff;
+    margin-bottom: 15px;
+}
+
+.contact-col i {
+    color: #C5A059; /* Gold Icons */
+    margin-top: 4px;
+}
+
+/* --- FOOTER BOTTOM BAR --- */
+.footer-bottom {
+    padding: 20px 0;
+    background-color: #002855; /* Slightly darker shade for contrast */
+    font-size: 13px;
+    color: #aaa;
+}
+
+.bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+.bottom-links a:hover {
+    color: #fff;
+}
+
+/* --- RESPONSIVE FOOTER --- */
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
     }
-    .choose-us-grid .featured-card {
-        grid-column: span 1;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center; /* Center icons on mobile */
+    }
+
+    .contact-col ul li {
+        justify-content: center;
+    }
+    
+    .bottom-content {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bottom-links a {
+        margin: 0 10px;
     }
 }
