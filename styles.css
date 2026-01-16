@@ -190,3 +190,266 @@ body {
         justify-content: center;
     }
 }
+
+/* --- SERVICES SECTION --- */
+.services-section {
+    padding: 80px 0;
+    /* Soft light blue background to mimic the "wave" vibe */
+    background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+    /* IF you have a real wave image, uncomment the next line: */
+    /* background-image: url('wave-bg.png'); background-size: cover; background-position: bottom; */
+    text-align: center;
+}
+
+.section-header h2 {
+    color: #003366;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: #666;
+    margin-bottom: 50px;
+}
+
+/* --- THE GRID LAYOUT --- */
+.services-grid {
+    display: grid;
+    /* 4 Columns: 3 equal ones for small cards, 1 slightly wider for the tall card */
+    grid-template-columns: repeat(3, 1fr) 1.2fr;
+    gap: 20px;
+    text-align: center;
+}
+
+/* Standard Service Card Styling */
+.service-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Soft drop shadow */
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.service-card:hover {
+    transform: translateY(-5px); /* Moves up slightly on hover */
+}
+
+/* Icon Circles (Gold) */
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background-color: #fff8e1; /* Very light gold bg */
+    color: #C5A059; /* Gold icon color */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 24px;
+}
+
+.service-card h3 {
+    color: #003366;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.service-card a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* --- FEATURED CARD (The Tall One) --- */
+.featured-card {
+    /* Magic Grid Rule: Make this card span 2 rows vertically */
+    grid-row: span 2;
+    /* Force it to be in the 4th column */
+    grid-column: 4;
+    
+    background: #fff;
+    border-top: 5px solid #89CFF0; /* Light blue accent bar on top */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Align text to left for this one */
+}
+
+.featured-content h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.feature-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.feature-list li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+/* Adds a small gold dot before list items */
+.feature-list li::before {
+    content: "•";
+    color: #C5A059;
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.btn-gold {
+    background-color: #C5A059;
+    color: #fff !important; /* Force white text */
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+.btn-gold:hover {
+    background-color: #b08d45;
+}
+
+/* --- RESPONSIVE (Mobile) --- */
+@media (max-width: 1024px) {
+    .services-grid {
+        /* On tablets/phones, switch to 1 column or 2 columns */
+        grid-template-columns: 1fr 1fr; 
+    }
+    
+    .featured-card {
+        grid-column: span 2; /* Make it take full width */
+        grid-row: auto; /* Stop spanning rows */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    
+    .featured-card {
+        grid-column: span 1;
+    }
+}
+
+/* --- WHY CHOOSE US SECTION --- */
+.why-choose-us-section {
+    padding: 60px 0 80px 0;
+    background-color: #fff; /* White background */
+    text-align: center;
+}
+
+/* Fancy Gold Subheader */
+.fancy-subhead {
+    color: #C5A059; /* Gold */
+    font-family: "Georgia", serif; /* Serif font for elegance */
+    font-style: italic;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+/* --- THE GRID (5 Columns) --- */
+.choose-us-grid {
+    display: grid;
+    /* 4 columns for benefits (1 part each) + 1 column for ICAN (1.2 parts) */
+    grid-template-columns: repeat(4, 1fr) 1.2fr;
+    gap: 15px;
+    text-align: center;
+}
+
+/* Benefit Card Styling */
+.benefit-card {
+    background: #fff;
+    padding: 25px 15px;
+    border-radius: 15px;
+    /* Very subtle border/shadow */
+    border: 1px solid #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* Blue Icon Circles */
+.icon-circle-blue {
+    width: 60px;
+    height: 60px;
+    background-color: #e6f2ff; /* Very Light Blue bg */
+    color: #003366; /* Dark Blue icon */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 22px;
+}
+
+.benefit-card h3 {
+    color: #003366;
+    font-size: 16px; /* Slightly smaller to fit */
+    margin-bottom: 10px;
+    min-height: 40px; /* Forces lines to align even if text varies */
+}
+
+.benefit-card p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.benefit-card a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+/* Star Rating in ICAN card (Specific to this section) */
+.rating-stars {
+    margin-top: 15px;
+    color: #ffc107; /* Star yellow */
+    font-size: 12px;
+}
+.rating-stars span {
+    color: #333;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .choose-us-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+    .choose-us-grid .featured-card {
+        grid-column: span 2; 
+    }
+}
+
+@media (max-width: 768px) {
+    .choose-us-grid {
+        grid-template-columns: 1fr;
+    }
+    .choose-us-grid .featured-card {
+        grid-column: span 1;
+    }
+}
