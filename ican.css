@@ -273,3 +273,180 @@
         grid-template-columns: 1fr; /* 1 column on mobile */
     }
 }
+
+/* --- INTEGRITY SECTION --- */
+.integrity-section {
+    padding: 80px 0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.integrity-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Left Side: Text & Grid */
+.integrity-text {
+    flex: 1;
+}
+
+.integrity-text h2 {
+    color: #003366;
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.integrity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columns */
+    gap: 30px;
+}
+
+.integrity-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.num-circle {
+    min-width: 40px;
+    height: 40px;
+    background-color: #fff8e1; /* Light Gold */
+    color: #C5A059; /* Gold Text */
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px; /* Aligns with the top of the title */
+}
+
+.item-text h3 {
+    color: #003366;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.item-text p {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Right Side: Image */
+.integrity-image-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.integrity-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px; /* Rounded corners */
+    /* Optional: Organic blob shape if desired, otherwise standard rounded rect */
+    border-radius: 30px 30px 30px 30px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* --- CTA STRIP (Bottom Bar) --- */
+.cta-strip {
+    padding: 50px 0;
+    background-color: #fff; /* White background */
+    border-top: 1px solid #eee; /* Subtle separator line */
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Wraps on smaller screens */
+    gap: 20px;
+}
+
+.cta-header h2 {
+    color: #003366;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cta-contact-info {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    gap: 20px;
+}
+
+.cta-contact-info i {
+    color: #C5A059; /* Gold icons */
+    margin-right: 5px;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Button Styles for CTA */
+.btn-blue {
+    background-color: #003366;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid #003366;
+    color: #003366;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-outline:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+.btn-dark-gold {
+    background-color: #b08d45; /* Darker Gold/Brown per image */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .integrity-content {
+        flex-direction: column;
+    }
+
+    .cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .cta-contact-info {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .cta-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
