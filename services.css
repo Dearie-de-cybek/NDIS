@@ -143,124 +143,153 @@
 
 /* --- HOW WE HELP YOU SECTION --- */
 .how-we-help-section {
-    position: relative; /* Needed for the background image positioning */
     padding-bottom: 80px;
     background-color: #fff;
-    overflow: hidden; /* Ensures the image doesn't spill out */
+    overflow: hidden; 
 }
 
-/* The Visible Separator Line */
+/* Top Horizontal Separator */
 .separator-line {
     width: 100%;
     height: 1px;
-    background-color: #ddd; /* Light grey line */
+    background-color: #e0e0e0;
     margin: 0 auto 50px auto;
     position: relative;
 }
 
-/* Optional: Add a small gold dash in the center of the line if desired */
+/* Little Gold dash in middle of line */
 .separator-line::after {
     content: "";
     display: block;
     width: 60px;
     height: 3px;
-    background-color: #C5A059;
-    margin: -1px auto 0 auto;
+    background-color: #C5A059; /* Gold */
+    position: absolute;
+    left: 50%; /* Centers it */
+    top: -1px;
+    transform: translateX(-50%);
 }
 
 .help-header {
     text-align: center;
-    margin-bottom: 50px;
-    position: relative;
-    z-index: 2; /* Keeps text above image */
+    margin-bottom: 40px;
 }
 
-/* --- Process Grid (4 Columns) --- */
+/* --- Layout Wrapper --- */
+.process-wrapper {
+    display: flex;
+    align-items: flex-end; /* Aligns content to bottom to match image */
+    gap: 20px;
+}
+
+/* --- Left Side: Steps Grid --- */
 .process-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    position: relative;
-    z-index: 2; /* Keeps text above image */
+    flex: 3; /* Takes up about 75% of the width */
+    display: flex; /* Makes them side-by-side */
 }
 
 .process-step {
+    flex: 1; /* Equal width for each step */
     text-align: left;
-    padding-right: 15px;
+    padding: 0 20px;
+    /* The Visible Vertical Dividing Line */
+    border-right: 1px solid #eee; 
+    display: flex;
+    flex-direction: column;
 }
 
-/* Large Blue Numbers */
+/* Remove border from last item in the grid so it doesn't touch the image weirdly */
+.process-step:last-child {
+    border-right: none;
+}
+
+/* Number Circles (Default Blue) */
 .step-number {
-    width: 80px;
-    height: 80px;
-    background-color: #f0f8ff; /* Very light blue */
-    color: #003366; /* Dark Blue text */
-    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    background-color: #f0f8ff; /* Light Blue */
+    color: #003366; /* Dark Blue Text */
+    font-size: 24px;
     font-weight: bold;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+/* SPECIAL: Gold Circle for Step 3 */
+.step-gold {
+    background-color: #fff8e1; /* Light Gold BG */
+    color: #C5A059; /* Gold Text */
 }
 
 .process-step h3 {
     color: #003366;
-    font-size: 18px;
-    margin-bottom: 15px;
-    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: 700;
 }
 
 .process-step p {
-    color: #555;
-    font-size: 14px;
-    line-height: 1.6;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.5;
     margin-bottom: 20px;
-    min-height: 60px;
+    min-height: 60px; /* Ensures alignment even if text varies */
 }
 
 .process-step a {
     color: #003366;
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
+    margin-top: auto;
 }
 
-/* --- Background Photo Positioning --- */
-.process-bg-image {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 50%; /* Covers the right half */
-    height: 100%;
-    background-image: url('process-bg.jpg'); /* Your photo file */
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    background-size: contain; /* Keeps the image proportional */
-    
-    /* This gradient fades the image out to white on the left and top 
-       so the text stays readable */
-    mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
-    z-index: 1;
-    opacity: 0.8; /* Slight transparency to blend it */
+/* --- Right Side: Image --- */
+.process-image-side {
+    flex: 1.2; /* Takes up the remaining width (approx 25%) */
+    position: relative;
+    display: flex;
+    align-items: flex-end; /* Aligns image to bottom */
+}
+
+.process-image-side img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    /* Optional: Fade mask if you want it to blend like the design */
+    mask-image: linear-gradient(to right, transparent 0%, black 20%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
 }
 
 /* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-    .process-grid {
-        grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+@media (max-width: 1024px) {
+    .process-wrapper {
+        flex-direction: column; /* Stack image below steps on tablet */
     }
     
-    .process-bg-image {
-        opacity: 0.2; /* Fade image more on mobile so it doesn't clash with text */
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
     .process-grid {
-        grid-template-columns: 1fr; /* Stack on mobile */
+        width: 100%;
+        flex-wrap: wrap; /* Allow wrapping */
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+    }
+
+    .process-step {
+        flex: 1 1 45%; /* 2 per row on tablet */
+        border-bottom: 1px solid #eee;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-right: none; /* Simplify borders on mobile */
+    }
+
+    .process-image-side {
+        width: 100%; /* Full width image on mobile */
+    }
+    
+    .process-image-side img {
+        mask-image: none; /* Remove fade on mobile */
     }
 }
