@@ -1,0 +1,108 @@
+.policies-content {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.policy-block {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.policy-block h2 {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.policy-block ul {
+    margin-left: 20px;
+    margin-top: 15px;
+    color: #555;
+}
+
+.policy-block li {
+    margin-bottom: 10px;
+}
+
+/* --- TERMS & CONDITIONS PAGE --- */
+.terms-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.terms-block {
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+}
+
+.terms-block h2 {
+    color: #003366;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.terms-block p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Standard bullet list */
+.terms-list {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.terms-list li {
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+/* --- Special ICAN Terms Box --- */
+.ican-terms {
+    background-color: #f9fcff; /* Light blue tint */
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid #e6f2ff;
+    border-left: 5px solid #C5A059; /* Gold accent */
+}
+
+.ican-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border-bottom: none; /* Override standard header border */
+}
+
+.ican-header h2 {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.numbered-terms {
+    margin-left: 20px;
+    color: #444;
+}
+
+.numbered-terms li {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    line-height: 1.6;
+}
+
+.numbered-terms strong {
+    color: #003366;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .ican-terms {
+        padding: 20px;
+    }
+}
