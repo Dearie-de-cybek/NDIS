@@ -1,0 +1,266 @@
+/* --- SERVICES PAGE HERO --- */
+.services-hero {
+    /* White on left (0%) to Soft Blue on right (100%) */
+    background: linear-gradient(to right, #ffffff 40%, #e6f2ff 100%);
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Reuse the container layout from Home Page, but ensure text size matches Services image */
+.services-hero .hero-text h1 {
+    color: #003366;
+    font-size: 48px; /* Slightly larger headline */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.services-hero .hero-text p {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 500px; /* Limits width so text doesn't stretch too far */
+}
+
+/* Specific button style for "Make a Referral" on this page */
+.btn-outline-grey {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 2px solid #ccc; /* Grey border */
+    color: #555; /* Grey text */
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: all 0.3s;
+    background-color: transparent;
+}
+
+.btn-outline-grey:hover {
+    border-color: #003366;
+    color: #003366;
+}
+
+/* --- SERVICES PAGE CONTENT --- */
+.services-list-section {
+    padding: 60px 0 80px 0;
+    background-color: #f9fcff; /* Very subtle blue tint */
+}
+
+/* Intro Text */
+.services-intro {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.services-intro p {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.6;
+    max-width: 900px; /* Prevents line from getting too long to read */
+}
+
+/* --- The 8-Card Grid --- */
+.services-page-grid {
+    display: grid;
+    /* Exactly 4 equal columns */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 25px;
+}
+
+/* Individual Card Styling */
+.service-page-card {
+    background: #fff;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.service-page-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Reuse the blue icon circle from previous sections, 
+   but ensuring it's defined here if you missed it */
+.icon-circle-blue {
+    width: 60px;
+    height: 60px;
+    background-color: #e6f2ff; /* Light Blue bg */
+    color: #003366; /* Dark Blue icon */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    font-size: 22px;
+}
+
+.service-page-card h3 {
+    color: #003366;
+    font-size: 18px;
+    margin-bottom: 10px;
+    min-height: 44px; /* Keeps titles aligned if some are 2 lines */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-page-card p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.service-page-card a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .services-page-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .services-page-grid {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+    
+    .services-intro p {
+        font-size: 16px;
+    }
+}
+
+/* --- HOW WE HELP YOU SECTION --- */
+.how-we-help-section {
+    position: relative; /* Needed for the background image positioning */
+    padding-bottom: 80px;
+    background-color: #fff;
+    overflow: hidden; /* Ensures the image doesn't spill out */
+}
+
+/* The Visible Separator Line */
+.separator-line {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd; /* Light grey line */
+    margin: 0 auto 50px auto;
+    position: relative;
+}
+
+/* Optional: Add a small gold dash in the center of the line if desired */
+.separator-line::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #C5A059;
+    margin: -1px auto 0 auto;
+}
+
+.help-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2; /* Keeps text above image */
+}
+
+/* --- Process Grid (4 Columns) --- */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    position: relative;
+    z-index: 2; /* Keeps text above image */
+}
+
+.process-step {
+    text-align: left;
+    padding-right: 15px;
+}
+
+/* Large Blue Numbers */
+.step-number {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f8ff; /* Very light blue */
+    color: #003366; /* Dark Blue text */
+    font-size: 32px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.process-step h3 {
+    color: #003366;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.process-step p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 60px;
+}
+
+.process-step a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* --- Background Photo Positioning --- */
+.process-bg-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%; /* Covers the right half */
+    height: 100%;
+    background-image: url('process-bg.jpg'); /* Your photo file */
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: contain; /* Keeps the image proportional */
+    
+    /* This gradient fades the image out to white on the left and top 
+       so the text stays readable */
+    mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+    z-index: 1;
+    opacity: 0.8; /* Slight transparency to blend it */
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+    .process-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+    }
+    
+    .process-bg-image {
+        opacity: 0.2; /* Fade image more on mobile so it doesn't clash with text */
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .process-grid {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+}
