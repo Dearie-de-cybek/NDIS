@@ -88,16 +88,40 @@ body {
     align-items: center;
 }
 
-/* Logo */
-.logo img {
-    height: 50px;
-    width: auto;
-    transition: height 0.3s;
+/* =========================
+   LOGO (LEGIBLE & RESPONSIVE)
+========================= */
+
+.logo {
+    display: flex;
+    align-items: center;
 }
 
-.main-nav.sticky .logo img {
-    height: 40px; /* Shrinks slightly on scroll */
+.logo img {
+    height: 85px;              /* 🔥 MAIN SIZE CONTROL */
+    width: auto;
+    max-width: 260px;
+    object-fit: contain;
+    transition: height 0.3s ease;
 }
+
+/* Sticky state – slightly smaller but still readable */
+.main-nav.sticky .logo img {
+    height: 70px;
+}
+
+/* Mobile logo size */
+@media (max-width: 768px) {
+    .logo img {
+        height: 60px;
+        max-width: 200px;
+    }
+
+    .main-nav.sticky .logo img {
+        height: 55px;
+    }
+}
+
 
 /* Menu Wrapper (Links + Button) */
 .nav-menu-wrapper {
@@ -655,10 +679,15 @@ body {
 
 /* --- Column 1: About & Logo --- */
 .footer-logo {
-    max-width: 150px;
+ /* max-width: 150px;-->
     margin-bottom: 20px;
     /* In case you don't have a white logo, this filter makes a black logo white */
     /* filter: brightness(0) invert(1); */ 
+     max-width: 200px;     /* 🔥 increase size for readability */
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    object-fit: contain;
 }
 
 .about-col p {
