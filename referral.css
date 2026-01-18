@@ -83,3 +83,21 @@
     .form-group-row { grid-template-columns: 1fr; }
     .referral-steps-grid { flex-direction: column; gap: 20px; }
 }
+
+
+.form-responsive-wrapper {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    display: inline-block;
+    width: 100%;
+    max-width: 800px; /* Restricts the width so it doesn't look stretched */
+}
+
+/* Adjust iframe height on mobile if needed */
+@media (max-width: 600px) {
+    .form-responsive-wrapper iframe {
+        height: 1200px; /* Taller height for mobile scrolling */
+    }
+}

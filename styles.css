@@ -23,27 +23,63 @@ body {
     color: #fff;
     font-size: 13px;
     padding: 10px 0;
+    transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
 .top-bar-content {
     display: flex;
-    justify-content: space-between; /* Pushes contact to left, links to right */
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on smaller desktops */
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 .contact-info span, 
-.top-links span, 
-.top-links a {
-    margin-right: 20px;
+.contact-info a,
+.top-links span {
     color: #fff;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Special styling for the new links */
+.top-special-link {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.top-special-link:hover {
+    color: #cbdcf0; /* Lighter blue on hover */
+}
+
+.divider {
+    opacity: 0.4;
 }
 
 /* --- PART 2: MAIN NAV STYLES --- */
 .main-nav {
     background-color: #fff;
     padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Subtle shadow under nav */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    width: 100%;
+    position: sticky; /* Sticky positioning */
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+/* Sticky State (Added via JS) */
+.main-nav.sticky {
+    padding: 10px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .nav-content {
@@ -52,17 +88,29 @@ body {
     align-items: center;
 }
 
-/* Logo styling */
+/* Logo */
 .logo img {
-    height: 50px; /* Adjust this based on your logo size */
+    height: 50px;
     width: auto;
+    transition: height 0.3s;
 }
 
-/* Navigation Links */
+.main-nav.sticky .logo img {
+    height: 40px; /* Shrinks slightly on scroll */
+}
+
+/* Menu Wrapper (Links + Button) */
+.nav-menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Links */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px; /* Space between links */
+    gap: 25px;
 }
 
 .nav-links a {
@@ -70,32 +118,118 @@ body {
     color: #333;
     font-weight: 500;
     font-size: 16px;
+    position: relative; /* For the underline animation */
     transition: color 0.3s;
+}
+
+/* Cool Underline Animation */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #003366;
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #003366; /* Blue active color */
-    border-bottom: 2px solid #003366; /* The little underline in the design */
-    padding-bottom: 5px;
+    color: #003366;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
 }
 
 /* Enquire Button */
 .btn-enquire {
-    background-color: #003366; /* Blue background */
+    background-color: #003366;
     color: #fff;
     padding: 10px 25px;
-    border-radius: 50px; /* Makes it pill-shaped */
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     font-size: 14px;
-    transition: background-color 0.3s;
+    transition: transform 0.2s, background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .btn-enquire:hover {
-    background-color: #002244; /* Darker blue on hover */
+    background-color: #002244;
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
+/* --- PART 3: MOBILE RESPONSIVENESS --- */
+.mobile-toggle {
+    display: none; /* Hidden on desktop */
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #003366;
+    cursor: pointer;
+    position: relative;
+    z-index: 2000;
+}
+
+@media (max-width: 992px) {
+    /* Top Bar: Hide extra details on small screens to save space */
+    .top-bar {
+        display: none;
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+
+    /* Mobile Menu Drawer */
+    .nav-menu-wrapper {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen */
+        width: 80%; /* Takes up 80% of width */
+        max-width: 300px;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        padding: 20px;
+        z-index: 1500;
+    }
+
+    .nav-menu-wrapper.active {
+        right: 0; /* Slide in */
+    }
+
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+
+    /* Optional: Overlay background when menu is open */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+        display: none;
+    }
+    .overlay.active {
+        display: block;
+    }
+}
 
 /* --- HERO SECTION --- */
 .hero-section {
