@@ -107,3 +107,173 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* --- DETAILED SERVICES PAGE STYLES --- */
+
+/* Wave Separator */
+.wave-separator {
+    line-height: 0;
+    width: 100%;
+    margin-top: -1px; /* Fixes tiny white gap */
+}
+.wave-separator svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+/* Section Backgrounds */
+.bg-light-blue {
+    background-color: #f9fcff; /* Very light blue */
+}
+.bg-white {
+    background-color: #ffffff;
+}
+
+.detailed-service-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Service Row Layout */
+.service-row {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* Reverses the order (Image Left, Text Right) */
+.reverse-layout {
+    flex-direction: row-reverse;
+}
+
+.service-text {
+    flex: 1;
+}
+
+.service-image {
+    flex: 1;
+}
+
+.service-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Organic Blob Shape Option - Uncomment if desired */
+    /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */
+}
+
+/* Header with Icon */
+.icon-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon-header h2 {
+    color: #003366;
+    font-size: 28px;
+    margin: 0;
+}
+
+.service-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Service Details Grid (How it helps / Support includes) */
+.service-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.detail-col h4 {
+    color: #003366;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e6f2ff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Lists */
+.gold-check-list, .gold-dot-list {
+    list-style: none;
+    padding: 0;
+}
+
+.gold-check-list li, .gold-dot-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 15px;
+}
+
+.gold-check-list li::before {
+    content: "\f00c"; /* FontAwesome Check */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #C5A059;
+    position: absolute;
+    left: 0;
+}
+
+.gold-dot-list li::before {
+    content: "•";
+    color: #C5A059;
+    font-weight: bold;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    line-height: 18px;
+}
+
+/* NDIS Funding Box */
+.funding-box {
+    background-color: #eef6ff; /* Blue tint */
+    border-left: 4px solid #003366;
+    padding: 15px;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 14px;
+}
+
+.btn-blue-outline {
+    display: inline-block;
+    padding: 10px 25px;
+    border: 1px solid #003366;
+    color: #003366;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-blue-outline:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .service-row, .reverse-layout {
+        flex-direction: column; /* Stack vertically on mobile */
+        gap: 30px;
+    }
+    
+    .service-details-grid {
+        grid-template-columns: 1fr; /* 1 column lists on mobile */
+        gap: 20px;
+    }
+    
+    .service-image {
+        order: -1; /* Puts image on top on mobile */
+        width: 100%;
+    }
+}
