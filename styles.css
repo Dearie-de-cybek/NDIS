@@ -601,32 +601,19 @@ body {
 }
 
 /* --- RIGHT: The ICAN Card --- */
-.ican-wide {
-    flex: 1; 
-    background: #fff;
-    border-top: 5px solid #89CFF0;
-    border-radius: 15px;
-    padding: 0 30px; /* Padding on sides, flex handles vertical centering */
-    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+/* --- NEW IMAGE WRAPPER STYLES --- */
+.choose-us-image-wrapper {
+    flex: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centers content vertically */
-    align-items: center;
-    text-align: center;
+    height: auto; 
 }
 
-.ican-wide h3 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #333;
+.choose-us-image-wrapper img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 15px; 
 }
-
-.ican-wide p {
-    margin-bottom: 25px;
-    color: #666;
-    line-height: 1.6;
-}
-
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
     .choose-us-layout {
@@ -648,7 +635,13 @@ body {
 
     .ican-wide {
         width: 100%;
-        padding: 40px 30px; /* Add padding back for mobile since stretch isn't applying same way */
+        padding: 40px 30px; 
+    }
+
+     .choose-us-image-wrapper {
+        width: 100%;
+        height: 300px; 
+        margin-top: 30px;
     }
 }
 
