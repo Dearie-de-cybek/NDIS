@@ -65,169 +65,167 @@
         </nav>
     </header>
 
-    <section class="ican-hero">
-        <div class="container hero-content">
+<section class="ican-hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content-center">
+            <p class="hero-subtitle">Inclusive Care & Access Network</p>
+            <h1>ICAN Support Program</h1>
+            <p class="hero-desc">Bridging funding gaps so essential care never stops.</p>
             
-            <div class="hero-text">
-                <p class="breadcrumbs">Home > ICAN Program</p>
-                <h1>ICAN Support Program</h1>
-                <p>Ethical short-term support bridging the gap when funding delays or changes shouldn't stop essential care.</p>
-                
-                <div class="hero-actions">
-                    <a href="#" class="btn-gold">Check ICAN Eligibility ></a>
-                    <a href="tel:+61288971313" class="phone-link"><i class="fa-solid fa-phone"></i> call: +61 2 8897 1313</a>
-                </div>
-            </div>
-
-            <div class="hero-image-wrapper">
-                <img src="elderly.jpg" alt="Caregiver supporting an elderly woman">
-            </div>
-
+          
         </div>
     </section>
 
-
-    <section class="purpose-section">
-        <div class="container purpose-grid">
-            
-            <div class="purpose-content">
-                <h2 class="section-title">
-                    <span class="icon-gold"><i class="fa-solid fa-hands-holding-circle"></i></span> 
-                    Purpose of the ICAN Support Program
-                </h2>
-                
-                <ul class="custom-list">
-                    <li>Short-term care when NDIS funding is temporarily insufficient or delayed.</li>
-                    <li>Essential support to maintain health, safety, and wellbeing.</li>
-                    <li>Ethical solution with strong safeguarding and regulatory compliance.</li>
-                </ul>
-
-                <div class="definition-box">
-                    <p><strong>ICAN</strong> stands for Immediate Compassion and Nurturing Support — because every need deserves impactful touch.</p>
+    <section class="ican-intro-section">
+        <div class="container">
+            <div class="ican-intro-box">
+                <div class="section-header center-text">
+                    <h4 class="fancy-subhead">– Program Overview –</h4>
+                    <h2>What is the ICAN Support Program?</h2>
                 </div>
+                
+                <p>The ICAN Support Program is a short-term assistance initiative designed to support individuals who are navigating temporary funding limitations, transitions within the NDIS, or urgent support needs. ICAN is needs-based, time-limited, and non-contractual, and operates under strict eligibility and governance controls.</p>
+                
+                <p>While the NDIS provides long-term funding for approved disability supports, some participants may face periods where essential care is at risk due to delays, exhausted funding, or changes in circumstances. ICAN operates alongside the NDIS to provide temporary, ethical support during these moments without undermining participant choice, control, or NDIS pricing integrity.</p>
+                
+                <p>The program is designed to offer reassurance, stability, and clarity. All ICAN requests are assessed individually and delivered under strict governance controls, with clear entry and exit pathways. Participation in ICAN is discretionary and does not replace funded supports or guarantee ongoing services.</p>
             </div>
-
-            <div class="suitability-card">
-                <div class="card-icon"><i class="fa-solid fa-lightbulb"></i></div>
-                <h3>ICAN Support Right for Me?</h3>
-                <p>For individuals already in the NDIS, facing support shortfalls, and needing short-term, direct care — ICAN may be of benefit.</p>
-                <a href="#" class="btn-gold">Check ICAN Eligibility ></a>
-            </div>
-
         </div>
     </section>
 
-
-    <section class="eligibility-section">
+    <section class="ican-tabs-section">
         <div class="container">
             
-            <div class="eligibility-header">
-                <h2>Eligibility Criteria for ICAN Support</h2>
-                <p>ICAN eligibility is carefully limited to the following scenarios to ensure it is ethical, needs-based, and aligned with regulatory requirements.</p>
+            <div class="ican-tabs-nav">
+                <button class="tab-btn active" onclick="openTab(event, 'reduced')">Reduced Funding</button>
+                <button class="tab-btn" onclick="openTab(event, 'awaiting')">Awaiting NDIS Plan</button>
+                <button class="tab-btn" onclick="openTab(event, 'respite')">Respite & STA</button>
+                <button class="tab-btn" onclick="openTab(event, 'urgent')">Urgent Changes</button>
+                <button class="tab-btn" onclick="openTab(event, 'interim')">Interim Accommodation</button>
             </div>
 
-            <div class="eligibility-grid">
-                
-                <div class="eligibility-card">
-                    <div class="card-icon-circle"><i class="fa-solid fa-hourglass-half"></i></div>
-                    <h3>Funding Delay</h3>
-                    <p>Your NDIS plan approval is significantly delayed, pending review, or in appeal.</p>
-                    
+            <div id="reduced" class="tab-content active-content">
+                <div class="tab-card">
+                    <div class="icon-circle-gold"><i class="fa-solid fa-piggy-bank"></i></div>
+                    <h3>Reduced-Rate Supports</h3>
+                    <p class="tab-desc">For participants with low or exhausted Core funding who require short-term assistance while planning or evidencing future supports.</p>
+                    <ul class="gold-check-list">
+                        <li>7–12% reduction from the NDIS Price Guide</li>
+                        <li>Short-term supports only</li>
+                        <li>No lock-in service agreements</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="eligibility-card">
-                    <div class="card-icon-circle"><i class="fa-solid fa-calendar-xmark"></i></div>
-                    <h3>Funding Gap</h3>
-                    <p>You are experiencing a temporary pause in existing funding.</p>
-                    
+            <div id="awaiting" class="tab-content">
+                <div class="tab-card">
+                    <div class="icon-circle-gold"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <h3>Interim Supports</h3>
+                    <p class="tab-desc">Support for individuals awaiting an NDIS access decision or between plans.</p>
+                    <ul class="gold-check-list">
+                        <li>Privately funded interim assistance</li>
+                        <li>Up to 12% reduced private-fee rate</li>
+                        <li>Time-limited support</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="eligibility-card">
-                   <div class="card-icon-circle"><i class="fa-solid fa-exchange-alt"></i></div>
-                    <h3>Transition Period</h3>
-                    <p>You are new to the NDIS and in the onboarding phase.</p>
-                    
+            <div id="respite" class="tab-content">
+                <div class="tab-card">
+                    <div class="icon-circle-gold"><i class="fa-solid fa-bed"></i></div>
+                    <h3>Respite & STA-Related Relief</h3>
+                    <p class="tab-desc">Designed to relieve carer burnout and prevent placement breakdowns.</p>
+                    <ul class="gold-check-list">
+                        <li>Free accommodation and meals</li>
+                        <li>Support hours billed to Core Supports only</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="eligibility-card">
-                    <div class="card-icon-circle"><i class="fa-solid fa-clock-rotate-left"></i></div>
-                    <h3>Unexpected Need</h3>
-                    <p>You have an unexpected situation requiring immediate care or support.</p>
-                    
+            <div id="urgent" class="tab-content">
+                <div class="tab-card">
+                    <div class="icon-circle-gold"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                    <h3>Urgent Change of Circumstances</h3>
+                    <p class="tab-desc">For participants facing immediate risk and lacking funded support coordination.</p>
+                    <ul class="gold-check-list">
+                        <li>Free short-term support coordination</li>
+                        <li>Evidence collation and escalation support</li>
+                    </ul>
                 </div>
+            </div>
 
+            <div id="interim" class="tab-content">
+                <div class="tab-card">
+                    <div class="icon-circle-gold"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h3>Interim Accommodation Assistance</h3>
+                    <p class="tab-desc">Temporary accommodation support while awaiting SIL or SDA funding decisions.</p>
+                    <ul class="gold-check-list">
+                        <li>Short-term housing or rental assistance</li>
+                        <li>Clear exit planning</li>
+                        <li>No tenancy rights created</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
     </section>
 
-
-
-    <section class="integrity-section">
-        <div class="container integrity-content">
-            
-            <div class="integrity-text">
-                <h2>How ICAN Maintains Integrity and Trust</h2>
-                
-                <div class="integrity-grid">
-                    <div class="integrity-item">
-                        <div class="num-circle">1</div>
-                        <div class="item-text">
-                            <h3>Strict Safeguarding Process</h3>
-                            <p>All ICAN supports follow strict safeguarding policies and processes regarding NDIS standards.</p>
-                        </div>
-                    </div>
-
-                    <div class="integrity-item">
-                        <div class="num-circle">2</div>
-                        <div class="item-text">
-                            <h3>Regulated Decisions</h3>
-                            <p>Each application is reviewed to verify strict compliance and eligibility by trained teams.</p>
-                        </div>
-                    </div>
-
-                    <div class="integrity-item">
-                        <div class="num-circle">3</div>
-                        <div class="item-text">
-                            <h3>Eligibility Review</h3>
-                            <p>Our review ensures your needs and ICAN eligibility carefully match essential criteria.</p>
-                        </div>
-                    </div>
-
-                    <div class="integrity-item">
-                        <div class="num-circle">4</div>
-                        <div class="item-text">
-                            <h3>Short-Term Support</h3>
-                            <p>Clear approval with fixed short-term focus on safety and wellbeing.</p>
-                        </div>
-                    </div>
-                </div>
+    <section class="ican-important-section">
+        <div class="container">
+            <div class="important-box">
+                <h4><i class="fa-solid fa-circle-info"></i> Important Information</h4>
+                <p>The ICAN Support Program is not a permanent discount program, a guaranteed entitlement, or a replacement for funded NDIS supports. All assistance is time-limited and subject to assessment and availability.</p>
             </div>
-
-            <div class="integrity-image-wrapper">
-                <img src="patient.jpg" alt="Caregiver with clients">
-            </div>
-
         </div>
     </section>
 
-    <section class="cta-strip">
-        <div class="container cta-content">
+   <section class="ican-faq-section">
+        <div class="container">
+            <h2 class="section-title center-text">ICAN Questionnaire</h2>
             
-            <div class="cta-header">
-                <h2>Have Questions about ICAN?</h2>
-                <div class="cta-contact-info">
-                    <span><i class="fa-solid fa-phone"></i> +61 2 8897 1313</span>
-                    <span><i class="fa-solid fa-envelope"></i> ican@phendithdcare.com.au</span>
+            <div class="accordion-wrapper">
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How does your organisation support participants with short-term or urgent needs?
+                        <span class="icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Phendit Disability & Home Care offers the ICAN (Inclusive Care & Access Network) Support Program, a short-term, discretionary assistance program for participants experiencing funding gaps, waiting for plan approvals, or requiring urgent supports. ICAN is time-limited, participant-focused, and fully compliant with NDIS Practice Standards.</p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn-blue">Enquire Now ></a>
-                <a href="referral.html" class="btn-outline">Make a Referral ></a>
-                <a href="contact.html" class="btn-dark-gold">Started an Online Enquiry</a>
-            </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How do you ensure compliance with NDIS Practice Standards?
+                        <span class="icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We adhere to strict governance controls. All ICAN supports are documented, transparent, and operate alongside standard NDIS safeguarding policies to ensure quality and safety are never compromised.</p>
+                    </div>
+                </div>
 
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How do participants access this support?
+                        <span class="icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Access is strictly needs-based. Participants or their nominees can contact our team to request an eligibility assessment based on their current funding status and immediate risks.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        How is ICAN documented for audit purposes?
+                        <span class="icon"><i class="fa-solid fa-plus"></i></span>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Every ICAN arrangement is documented with a clear agreement outlining the temporary nature of the support, the specific concessions offered, and the planned exit pathway to standard funding.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
  
