@@ -1,0 +1,103 @@
+/* --- TEAM PAGE STYLES --- */
+
+.team-section {
+    padding: 80px 0;
+}
+
+.center-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+/* Grid Layout */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Specific styling for Leadership (max 2 columns centered) */
+.leadership-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Card Styling */
+.team-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.team-card:hover {
+    transform: translateY(-5px); /* Lifts up slightly */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.team-img {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.team-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+/* Image zooms in slightly on hover */
+.team-card:hover .team-img img {
+    transform: scale(1.05);
+}
+
+.team-info {
+    padding: 25px;
+}
+
+.team-info h3 {
+    color: #003366;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.role {
+    display: block;
+    color: #C5A059; /* Gold */
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.team-info p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Social Icons */
+.team-social a {
+    color: #003366;
+    margin: 0 8px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.team-social a:hover {
+    color: #C5A059;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .leadership-grid {
+        grid-template-columns: 1fr; /* Stack leaders on mobile */
+    }
+}
