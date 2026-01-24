@@ -101,3 +101,149 @@
         grid-template-columns: 1fr; /* Stack leaders on mobile */
     }
 }
+
+
+/* --- TEAM PAGE STYLES --- */
+
+.team-intro-section {
+    padding: 60px 0;
+    background: #fff;
+}
+
+.intro-box p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 5 Column Grid --- */
+.team-grid-section {
+    padding-bottom: 80px;
+}
+
+.team-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 15px; /* Rounded corners */
+    margin-bottom: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.team-member:hover img {
+    transform: scale(1.05); /* Zoom effect */
+}
+
+.team-member h3 {
+    color: #003366;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.team-member .role {
+    color: #C5A059;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* --- Details Section (What we do) --- */
+.team-details-section {
+    padding: 80px 0;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.detail-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.detail-box h3 {
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+/* --- Commitment Section --- */
+.commitment-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.commitment-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.tag {
+    background-color: #e6f2ff;
+    color: #003366;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.impact-text {
+    font-family: serif; /* Elegant font */
+    font-style: italic;
+    color: #C5A059;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.contact-methods {
+    margin-top: 15px;
+    display: flex;
+    gap: 20px;
+    color: #fff; /* Assumes CTA background is dark/blue */
+    font-size: 16px;
+}
+
+.contact-methods i {
+    color: #C5A059;
+    margin-right: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .team-grid-5 {
+        grid-template-columns: repeat(3, 1fr); /* 3 cols on tablet */
+    }
+}
+
+@media (max-width: 600px) {
+    .team-grid-5 {
+        grid-template-columns: repeat(2, 1fr); /* 2 cols on mobile */
+    }
+    
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-methods {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
