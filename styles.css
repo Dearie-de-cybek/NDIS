@@ -823,6 +823,7 @@ body {
 @media (max-width: 1024px) {
     .footer-content {
         grid-template-columns: 1fr 1fr; /* 2 columns on tablet */
+        text-align: center;
     }
 }
 
@@ -830,6 +831,10 @@ body {
     .footer-content {
         grid-template-columns: 1fr; /* 1 column on mobile */
         text-align: center;
+    }
+
+    .about-col p {
+        margin: 0 auto 20px auto; 
     }
 
     .social-icons {
