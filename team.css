@@ -247,3 +247,57 @@
         gap: 10px;
     }
 }
+
+/* --- UNIVERSAL PAGE HERO (Cloudy/Misty Blue) --- */
+.page-hero {
+    position: relative;
+    padding: 80px 0; /* Space above and below text */
+    display: flex;
+    align-items: center;
+    
+    /* --- THE MISTY BACKGROUND EFFECT --- */
+    background-color: #ffffff; /* Fallback */
+    
+    background-image: 
+        /* Layer 1: White "Mist" on the right side */
+        radial-gradient(circle at 90% 50%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 60%),
+        
+        /* Layer 2: Soft Blue Cloud in the center */
+        radial-gradient(ellipse at 40% 50%, rgba(230, 242, 255, 1) 0%, rgba(230, 242, 255, 0) 70%),
+        
+        /* Layer 3: Base Gradient (Blue Left -> White Right) */
+        linear-gradient(to right, #e6f2ff 0%, #e6f2ff 30%, #ffffff 100%);
+        
+    background-size: cover;
+    border-bottom: 1px solid #f0f8ff; /* Subtle bottom border */
+}
+
+/* Ensure text is Dark Blue (since background is light) */
+.page-hero h1 {
+    color: #003366;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.page-hero p {
+    color: #555;
+    font-size: 18px;
+    max-width: 600px;
+}
+
+.breadcrumbs {
+    color: #C5A059; /* Gold */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Special styling for the sub-headline */
+.hero-sub {
+    color: #003366;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
