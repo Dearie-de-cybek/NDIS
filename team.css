@@ -1,4 +1,33 @@
 /* --- TEAM PAGE STYLES --- */
+body {
+    font-family: 'Open Sans', sans-serif; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+
+    /* --- THE GLOBAL MISTY BACKGROUND --- */
+    background-color: #ffffff; 
+    
+    background-image: 
+        /* Layer 1: White Mist floating on the right */
+        radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 50%),
+        
+        /* Layer 2: A soft blue cloud in the middle-left */
+        radial-gradient(ellipse at 30% 40%, rgba(230, 242, 255, 1) 0%, rgba(230, 242, 255, 0) 60%),
+        
+        /* Layer 3: Another soft cloud near the bottom */
+        radial-gradient(circle at 70% 80%, rgba(230, 242, 255, 1) 0%, rgba(230, 242, 255, 0) 60%),
+        
+        /* Layer 4: Base Gradient (Light Blue Left -> White Right) */
+        linear-gradient(to right, #e6f2ff 0%, #f7fbff 50%, #ffffff 100%);
+
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
 
 .team-section {
     padding: 80px 0;
